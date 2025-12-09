@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesible Form</title>
+    <style>
+        *{
+            font-size: large;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        body{
+            display: flex;
+        }
+        #header,
+        #card{
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 400px;
+            margin: 50px auto;
+            
+        }
+        #card,
+        #website{
+            display: none; /*for javascript on click event */
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"]{
+            border-radius: 8px;
+            width: 300px;
+            height: 40px;
+        }
+        input[type="submit"]{
+            border-radius: 8px;
+            width: 320px;
+            height: 45px;
+        }
+        #footer{
+            padding-top: 40px;
+        }
+
+        /*
+         :focus{
+         }*/
+    </style>
+</head>
+<body>
+    <div id="header">
+            <h1 id="title">SIGN-IN</h1>
+            <div id="body">
+                <label for="form">
+                    <form action="#" method="post">
+                        <h2>Full name</h2>
+                        <label for="full_name">
+                            <input type="text" name="Full Name" id="" required minlength="2">
+                        </label>
+                        <h3>Email</h3>
+                        <label for="email">
+                            <input type="email" name="" id="" required>
+                        </label>
+                        <h4>Password</h4>
+                        <input type="password" name="" id="" required minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <input type="button" value="Show password">
+                        <h5>Confirm Password</h5>
+                        <input type="password" name="" id="" required minlength="8">
+                        <input type="button" value="Show password">
+                    </form>
+                </label>
+            </div>
+            <div id="footer">
+                <label for="submit_update">
+                     <input type="submit" value="Update Profile" onclick="profile()">
+                </label>
+            </div>
+    </div>
+    <label for="Profile_status">
+           <aside>
+        <div id="card" >
+            <h6>Profile Completeness (%)</h6>
+            <section>
+                  <ul>
+                <h6>Todo:</h6>
+                <li>Create Account</li>
+                <li>Update RoadMap Progress</li>
+                <li>Setup public profile</li>
+                <li>Complete your first project</li>
+                <li>Invite your Friends</li>
+            </ul>
+             <label for="web_site" id="web_site">
+            <form action="#" method="get">
+                <input type="button" value="browse the website">
+            </form>
+            </section>
+        </label>
+        </div>   
+    </aside>
+    </label>
+</body>
+<script type="text/javascript">
+    function profile(){
+        const hide_form = document.getElementById('header');
+        hide_form.style.display = 'none';
+        const show_progress = document.getElementById('card');
+        show_progress.style.display = 'flex';
+        // other javascript logic here
+    }
+</script>
+</html>
